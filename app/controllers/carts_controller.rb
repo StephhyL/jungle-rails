@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
-
   def show
+    @msg = 'Cart is currently empty. :('
   end
 
   def add_item
@@ -24,5 +24,4 @@ class CartsController < ApplicationController
     cart.delete(product_id) if cart[product_id] < 1
     update_cart cart
   end
-
 end
