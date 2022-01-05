@@ -3,6 +3,6 @@ class Admin::DashboardController < ApplicationController
                                password: ENV['ADMIN_PASSWORD']
   def show
     @total_product_count = Product.all.sum(:quantity)
-    @
+    @total_category_count = Category.all.count
   end
 end
