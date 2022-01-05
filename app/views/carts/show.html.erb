@@ -7,7 +7,9 @@
   <% if enhanced_cart.length === 0 %>
     <p class='alert-warning'>
       <%= @msg %>
-      
+      <br>
+      <br>
+      <%= link_to 'Back to Home Page', root_path %> 
     </p>
   <% else %>
     <div class="panel panel-default items">
