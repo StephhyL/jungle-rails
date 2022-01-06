@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root to: 'products#index'
 
-  resources :about
+  get 'about', action: :index, controller: 'about'
+
+  # resources :about
+
+  # resources :about
   resources :products, only: %i[index show]
   resources :categories, only: [:show]
 
