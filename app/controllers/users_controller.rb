@@ -7,8 +7,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to '/', notice: 'User created!'
     else
-      flash[:error] = 'An error occured!'
-      redirect_to '/register'
+      redirect_to '/register', notice: 'An error occured! Please try again.'
     end
   end
 

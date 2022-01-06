@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       redirect_to '/'
     else
       # if user's login doesn't work, send them back to the login form
-      redirect_to '/login'
+      redirect_to '/login', notice: 'Invalid credentials. Please try again!'
     end
   end
 
