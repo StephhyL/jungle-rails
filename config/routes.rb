@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   # These routes are for sign up.
   # For a form in the browse
   get '/register' => 'users#new'
+  post '/users' => 'users#create'
 
   # receive the form and create a user in our database using the data given  to us by the user
   get '/users' => 'users#create'
