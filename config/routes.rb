@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     root to: 'dashboard#show'
     resources :products, except: %i[edit update show]
     resources :categories, only: %i[index new create]
-    resources :sales, only: %i[index new create]
+    resources :sales, only: %i[index new create destroy]
   end
 
   # These routes are for sign up.
