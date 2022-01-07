@@ -6,19 +6,19 @@
   <table class="table table-bordered">
     <tbody>
       <tr>
-        <td>Total Products</td>
+        <td><%= link_to 'Total Products', %i[admin products] %></td>
         <td><%= @total_product_count%></td>
       </tr>
       <tr>
-        <td>Total Categories</td>
+        <td><%= link_to 'Total Categories', %i[admin categories]%></td>
         <td><%= @total_category_count%></td>
       </tr>
       <tr>
-        <td>Total Active Sales</td>
+        <td><%= link_to 'Total Active Sales', %i[admin sales]%></td>
         <td><%= @total_active_sale_count%></td>
       </tr>
       <tr>
-        <td>Total Upcoming Sales</td>
+        <td><%= link_to 'Total Upcoming Sales', %i[admin sales]%></td>
         <td><%= @total_upcoming_sale_count%></td>
     </tr>
     </tbody>
