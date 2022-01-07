@@ -8,6 +8,6 @@ class Admin::SalesController < ApplicationController
   end
 
   def new
-    @sales = Sale.new
+    @sale = Sale.new
   end
 end
