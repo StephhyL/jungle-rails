@@ -5,12 +5,12 @@
   </header>
 
   <% if enhanced_cart.length === 0 %>
-    <p class='alert-warning'>
-      <%= @msg %>
+    <div class='alert-warning'>
+      <h3><%= @msg %></h3>
+    </div>
       <br>
       <br>
       <%= link_to 'Back to Home Page', root_path, class: 'btn btn-primary'%> 
-    </p>
   <% else %>
     <div class="panel panel-default items">
       <table class="table table-bordered">
