@@ -1,6 +1,6 @@
 module SalesHelper
   def active_sale?
-    Sale.active.any?
+    Sale.any?
   end
 
   def current_active_sale
