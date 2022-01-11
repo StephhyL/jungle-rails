@@ -11,4 +11,15 @@ class User < ActiveRecord::Base
               minimum: 5,
             }
   validates :password_confirmation, presence: true
+
+  # def authenticate_with_credentials(email, password)
+  #   @user = User.new(email, password)
+  #   @user.valid? @user.
+
+  # end
+
+  def self.authenticate_with_credentials(email, password)
+    @user = User.find_by(email: email)
+    @user && @user.authenticate(password) ? @user : nil
+  end
 end
