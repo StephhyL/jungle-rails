@@ -68,4 +68,44 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to_not be_empty
     end
   end
+
+  describe '.authenticate_with_credentials' do
+    before do
+      @user =
+        User.create(
+          first_name: 'Jen',
+          last_name: 'Kim',
+          email: 'people@sunny.com',
+          password: '12345',
+          password_confirmation: '12345',
+        )
+    end
+
+    it 'should log user in with valid email/password combination' do
+      email = 'people@sunny.com'
+      password = '12345'
+
+      @user2 = User.authenticate_with_credentials(email, password)
+
+      expect(@user2).to eq(@user)
+    end
+
+    it 'should still be a valid email regardless of spaces around email' do
+      email = '    people@sunny.com  '
+      password = '12345'
+
+      @user2 = User.authenticate_with_credentials(email, password)
+
+      expect(@user2).to eq(@user)
+    end
+
+    it 'should still be a valid email regardless of character case' do
+      email = ' PEOPLE@sunny.com  '
+      password = '12345'
+
+      @user2 = User.authenticate_with_credentials(email, password)
+
+      expect(@user2).to eq(@user)
+    end
+  end
 end
