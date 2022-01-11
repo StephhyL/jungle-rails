@@ -54,5 +54,18 @@ RSpec.describe User, type: :model do
       @user.valid?
       expect(@user.errors.full_messages).to_not be_empty
     end
+
+    it 'should have an inputted password' do
+      @user.password = nil
+      @user.valid?
+      expect(@user.errors.full_messages).to_not be_empty
+    end
+
+    it 'should have a password with a minimum length of 5 characters' do
+      @user.password = '123'
+      @user.password_confirmation = '123'
+      @user.valid?
+      expect(@user.errors.full_messages).to_not be_empty
+    end
   end
 end
